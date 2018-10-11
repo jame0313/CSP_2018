@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8.12)
+project(hw5-1)
+add_executable(swaping swaping.cc)
+add_executable(command_argument command_argument.cc)
+add_library(circlelib circle.cc)
+add_executable(circle circle_main.cc)
+target_link_libraries(circle circlelib)
+add_executable(cmdarg cmdarg.cc)
