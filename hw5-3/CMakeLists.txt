@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8.12)
+project(hw5-3)
+add_library(magic_square_lib magic_square.cc)
+add_executable(magic_square main.cc)
+target_link_libraries(magic_square magic_square_lib)
