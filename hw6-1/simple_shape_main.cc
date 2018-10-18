@@ -1,10 +1,9 @@
 #include <iostream>
 #include "simple_shape.h"
 using namespace std;
-
 int main(){
     char Q;
-    while(cout<<"shape?"<<endl, cin>>Q , Q!='Q'){
+    while(cout<<endl<<"shape?"<<endl, cin>>Q , Q!='Q'){
         if(Q=='C'){
             Circle *circle=new Circle;
             double x,y,radius;

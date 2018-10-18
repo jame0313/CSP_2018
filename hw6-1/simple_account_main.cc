@@ -2,7 +2,7 @@
 int main(){
     char Q;
     Admin admin;
-    while(cout <<"Job?"<<endl, cin>>Q ,Q!='Q'){
+    while(cout <<endl<<"Job?"<<endl, cin>>Q ,Q!='Q'){
         if(Q=='N'){
             int N=admin.getnum_account();
             admin.create_account();
