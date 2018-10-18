@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8.12)
+project(hw6-1)
+add_library(LIB_simple_shape simple_shape.cc)
+add_executable(simple_shape simple_shape_main.cc)
+target_link_libraries(simple_shape LIB_simple_shape)
+add_library(LIB_simple_account simple_account.cc)
+add_executable(simple_account simple_account_main.cc)
+target_link_libraries(simple_account LIB_simple_account)
