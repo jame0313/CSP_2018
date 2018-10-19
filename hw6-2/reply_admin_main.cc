@@ -39,7 +39,7 @@ int main(){
                 }
                 else if(cnt==2){
                     if(inputs[8]=='-'){
-                        int idx=inputs.substr(9).find("-");
+                        int idx=inputs.substr(9).find("-")+9;
                         _end=atoi(inputs.substr(idx+1).c_str());
                         _start=atoi(inputs.substr(8,idx-7).c_str());
                     }
