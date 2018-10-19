@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8.12)
+project(hw6-2)
+add_library(lib_reply_admin reply_admin.cc)
+add_executable(reply_admin reply_admin_main.cc)
+target_link_libraries(reply_admin lib_reply_admin)
