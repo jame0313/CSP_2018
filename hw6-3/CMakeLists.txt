@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8.12)
+project(hw6-3)
+add_library(LIB_minimal_fighter minimal_fighter.cc)
+add_executable(minimal_fighter minimal_fighter_main.cc)
+target_link_libraries(minimal_fighter LIB_minimal_fighter)
