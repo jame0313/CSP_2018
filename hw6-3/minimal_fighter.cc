@@ -14,6 +14,7 @@ FighterStatus MinimalFighter::status() const{
 
 void MinimalFighter::setHp(int _hp){
     this->mHp=_hp;
+    this->setStatus();
 }
 
 void MinimalFighter::setStatus(){
@@ -21,32 +22,28 @@ void MinimalFighter::setStatus(){
 }
 
 void MinimalFighter::hit(MinimalFighter *_enemy){
-    if(this->status()==Alive && _enemy->status()==Alive){
-        this->setHp(this->hp() - _enemy->power());
-        _enemy->setHp(_enemy->hp() - this->power());
+    bool isplayeralive=this->status()==Alive;
+    bool isenemyalive=_enemy->status()==Alive;
+    if(isenemyalive){
+        int cnt_hp=this->hp()-_enemy->power();
+        this->setHp(cnt_hp);
     }
-    else{
-        if(this->status() == Alive)
-            _enemy->setHp(_enemy->hp() - this->power());
-        if(_enemy->status() == Alive)
-            this->setHp(this->hp() - _enemy->power());
+    if(isplayeralive){
+        int cnt_hp=_enemy->hp()-this->power();
+        _enemy->setHp(cnt_hp);
     }
-    this->setStatus();
-    _enemy->setStatus();
 }
 
 void MinimalFighter::attack(MinimalFighter *_target){
     if(this->status() == Alive){
-        _target->setHp(_target->hp() - this->power());
+        int cnt_hp=_target->hp()-this->power();
+        _target->setHp(cnt_hp);
         this->mPower = 0;
     }
-    _target->setStatus();
 }
 
 void MinimalFighter::fight(MinimalFighter *_enemy){
-    this->hit(_enemy);
-    if(this->status() == Alive && _enemy->status() == Alive){
-        return this->fight(_enemy);
-    }
+    while(this->status() == Alive && _enemy->status() == Alive)
+        this->hit(_enemy);
 }
 
