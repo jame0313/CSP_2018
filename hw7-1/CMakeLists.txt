@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8.12)
+project(hw7-1)
+add_library(LIB_sorted_array sorted_array.cc)
+add_executable(sorted_array sorted_array_main.cc)
+target_link_libraries(sorted_array LIB_sorted_array)
+add_library(LIB_integer_set integer_set.cc)
+add_executable(integer_set integer_set_main.cc)
+target_link_libraries(integer_set LIB_integer_set)
