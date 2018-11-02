@@ -12,6 +12,7 @@ public:
 	}
 	void AddMessage(int number, const string& message);
 	void DeleteMessage(int number);
+    void printstring(const string& s);
 	vector<int> GetNumbers() const;
 	const string& GetMessage(int number) const;
 

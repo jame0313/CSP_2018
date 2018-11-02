@@ -1,6 +1,5 @@
 #include "message_book.h"
 #include <iostream>
-#include <sstream>
 int main() {
 	string cmd;
 	MessageBook mb;
@@ -9,15 +8,8 @@ int main() {
 			int number;
 			string raw,word,s;
 			cin >> number;
-			getline(cin, raw);
-			cout << "raw: |" << raw << '|' << endl;
-			stringstream ss;
-			ss.str(raw);
-			while (ss >> word) {
-				//cout << "word: |" << word << '|' << endl;
-				s+=word+" ";
-			}
-			//cout << "sentence: |" << s << '|' << endl;
+            //cin.get();
+            cin >> raw;
 			if (cin.fail()) return -1;
 			mb.AddMessage(number, raw);
 		}
@@ -32,12 +24,14 @@ int main() {
 			cin >> number;
 			if (cin.fail()) return -1;
 			const string& ret = mb.GetMessage(number);
-			cout << ret << endl << endl;
-		}
+		    mb.printstring(ret);
+            cout<<endl;
+        }
 		else if(cmd == "list") {
 			vector<int> v = mb.GetNumbers();
 			for (vector<int>::iterator it = v.begin(); it != v.end(); it++) {
-				cout << *it << ": " << mb.GetMessage(*it) << endl;
+				cout << *it << ": ";
+                mb.printstring(mb.GetMessage(*it));
 			}
 		}
 	}

@@ -2,8 +2,9 @@
 #include <iostream>
 
 void MessageBook::AddMessage(int number, const string& message) {
-	cout << "in class addmessage function: |" << message << "|" << endl;
-	this->messages_[number] = message;
+	//cout << "in class addmessage function: |" << message << "|" << endl;
+    string ret = message;
+	this->messages_[number] = ret;
 }
 
 void MessageBook::DeleteMessage(int number) {
@@ -20,7 +21,7 @@ vector<int> MessageBook::GetNumbers() const {
 const string& MessageBook::GetMessage(int number) const {
 	map<int, string> m = this->messages_;
 	if (m.find(number) != m.end()) {
-		const string& ret= m[number];
+		const string& ret= m.find(number)->second;
 		cout << "in class getmessage function: |" << ret << "|" << endl;
 		return ret;
 	}
@@ -28,4 +29,7 @@ const string& MessageBook::GetMessage(int number) const {
 		const string& ret = ""; 
 		return ret;
 	}
+}
+void MessageBook::printstring(const string& s){
+    cout << s << endl;
 }
