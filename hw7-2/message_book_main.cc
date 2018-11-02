@@ -23,15 +23,13 @@ int main() {
 			int number;
 			cin >> number;
 			if (cin.fail()) return -1;
-			const string& ret = mb.GetMessage(number);
-		    mb.printstring(ret);
-            cout<<endl;
+			string ret = mb.GetMessage(number);
+            cout << ret << "\n" << endl;
         }
 		else if(cmd == "list") {
 			vector<int> v = mb.GetNumbers();
 			for (vector<int>::iterator it = v.begin(); it != v.end(); it++) {
-				cout << *it << ": ";
-                mb.printstring(mb.GetMessage(*it));
+				cout << *it << ": " <<mb.GetMessage(*it) << endl;
 			}
 		}
 	}

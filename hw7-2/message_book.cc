@@ -21,7 +21,7 @@ vector<int> MessageBook::GetNumbers() const {
 const string& MessageBook::GetMessage(int number) const {
 	map<int, string> m = this->messages_;
 	if (m.find(number) != m.end()) {
-		const string& ret= m.find(number)->second;
+		string ret= m.find(number)->second;
 		cout << "in class getmessage function: |" << ret << "|" << endl;
 		return ret;
 	}
