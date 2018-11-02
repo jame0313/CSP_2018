@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8.12)
+project(hw7-2)
+add_library(LIB_simple_int_set simple_int_set.cc)
+add_executable(simple_int_set simple_int_set_main.cc)
+target_link_libraries(simple_int_set LIB_simple_int_set)
