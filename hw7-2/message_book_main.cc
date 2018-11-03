@@ -9,8 +9,9 @@ int main() {
 			int number;
 			string s;
 			cin >> number;
-			cin.get();
-			getline(cin, s);
+			char chk = cin.get();
+            if(chk!=' ') return -1;
+            getline(cin, s);
 			if (cin.fail()) return -1;
 			mb.AddMessage(number, s);
 		}
