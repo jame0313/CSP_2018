@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8.12)
+project(hw8-2)
+set(FIRST draw_shape)
+add_library(LIB_${FIRST} ${FIRST}.cc)
+add_executable(${FIRST} ${FIRST}_main.cc)
+target_link_libraries(${FIRST} LIB_${FIRST})
