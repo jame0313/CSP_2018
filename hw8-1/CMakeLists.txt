@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.12)
-project(hw7-1)
+project(hw8-1)
 set(FIRST number)
 set(SECOND rectangle)
 add_library(LIB_${FIRST} ${FIRST}.cc)
