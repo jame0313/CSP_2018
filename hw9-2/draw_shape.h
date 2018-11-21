@@ -18,8 +18,9 @@ public:
 
 	// 그려진 내용을 모두 지운다 ('.'으로 초기화)
 	void Clear();
-public:
+private:
 	vector<vector<char> > canvas;
+	size_t _row, _col;
 };
 class Shape {
 public:

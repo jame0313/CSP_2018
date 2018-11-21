@@ -2,11 +2,13 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <stdio.h>
 #include "draw_shape.h"
 
 using namespace std;
 
 int main() {
+	freopen("input.txt", "r", stdin);
 	vector<Shape*> shapes;
 
 	size_t row, col;

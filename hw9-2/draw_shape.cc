@@ -4,6 +4,8 @@ using namespace std;
 
 Canvas::Canvas(size_t row, size_t col)
 {
+	_col = col;
+	_row = row;
 	canvas.resize(col);
 	for (int i = 0; i < col; i++) canvas[i].resize(row);
 	Clear();
@@ -17,14 +19,16 @@ Canvas::~Canvas()
 
 void Canvas::Resize(size_t w, size_t h)
 {
-	canvas.resize(h);
-	for (int i = 0; i < h; i++) canvas[i].resize(w);
+	_row = w;
+	_col = h;
+	if(canvas.size()<h) canvas.resize(h);
+	for (int i = 0; i < h; i++) if(canvas[i].size()<w) canvas[i].resize(w);
 	Clear();
 }
 
 bool Canvas::DrawPixel(int x, int y, char brush)
 {
-	if (0 <= y && y <= canvas.size() && 0 <= x && x <= canvas[y].size()) {
+	if (0 <= y && y <= _col && 0 <= x && x <= _row) {
 		canvas[y][x] = brush;
 		return true;
 	}
@@ -34,11 +38,11 @@ bool Canvas::DrawPixel(int x, int y, char brush)
 void Canvas::Print()
 {
 	cout << ' ';
-	for (int i = 0; i < canvas[0].size(); i++) cout << i % 10;
+	for (int i = 0; i < _row; i++) cout << i % 10;
 	cout << endl;
-	for (int i = 0; i < canvas.size(); i++) {
+	for (int i = 0; i < _col; i++) {
 		cout << i % 10;
-		for (int j = 0; j < canvas[i].size(); j++) {
+		for (int j = 0; j < _row; j++) {
 			cout << canvas[i][j];
 		}
 		cout << endl;
@@ -47,8 +51,8 @@ void Canvas::Print()
 
 void Canvas::Clear()
 {
-	for (int i = 0; i < canvas.size(); i++) {
-		for (int j = 0; j < canvas[i].size(); j++) {
+	for (int i = 0; i < _col; i++) {
+		for (int j = 0; j < _row; j++) {
 			canvas[i][j] = '.';
 		}
 	}
