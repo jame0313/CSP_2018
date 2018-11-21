@@ -8,7 +8,6 @@
 using namespace std;
 
 int main() {
-	freopen("input.txt", "r", stdin);
 	vector<Shape*> shapes;
 
 	size_t row, col;
