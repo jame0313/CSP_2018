@@ -78,7 +78,7 @@ void Rectangle::Draw(Canvas * canvas)
 
 void Rectangle::Print()
 {
-	cout << "rect" << xpos << ' ' << ypos << ' ' << width << ' ' << height << ' ' << brush;
+	cout << "rect " << xpos << ' ' << ypos << ' ' << width << ' ' << height << ' ' << brush;
 }
 
 UpTriangle::UpTriangle(int _xpos, int _ypos, int _height, char _brush): Shape(_xpos,_ypos,_brush)
@@ -97,7 +97,7 @@ void UpTriangle::Draw(Canvas * canvas)
 
 void UpTriangle::Print()
 {
-	cout << "tri_up" << xpos << ' ' << ypos << ' ' << height << ' ' << brush;
+	cout << "tri_up " << xpos << ' ' << ypos << ' ' << height << ' ' << brush;
 }
 
 DownTriangle::DownTriangle(int _xpos, int _ypos, int _height, char _brush): Shape(_xpos,_ypos,_brush)
@@ -116,7 +116,7 @@ void DownTriangle::Draw(Canvas * canvas)
 
 void DownTriangle::Print()
 {
-	cout << "tri_down" << xpos << ' ' << ypos << ' ' << height << ' ' << brush;
+	cout << "tri_down " << xpos << ' ' << ypos << ' ' << height << ' ' << brush;
 }
 
 Diamond::Diamond(int _xpos, int _ypos, int _radius, char _brush): Shape(_xpos,_ypos,_brush)
@@ -141,5 +141,5 @@ void Diamond::Draw(Canvas * canvas)
 
 void Diamond::Print()
 {
-	cout << "diamond" << xpos << ' ' << ypos << ' ' << radius << ' ' << brush;
+	cout << "diamond " << xpos << ' ' << ypos << ' ' << radius << ' ' << brush;
 }
