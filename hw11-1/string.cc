@@ -6,7 +6,17 @@ MyString::MyString()
 	len = 0;
 }
 
-MyString::MyString(char * _a, int _len): a(_a), len(_len) {}
+MyString::MyString(char * _a, int _len): len(_len) {
+	a = new char[len];
+	for (int i = 0; i < len; i++) a[i] = _a[i];
+	a[len] = 0;
+}
+
+MyString::MyString(const MyString & str):len(str.len) {
+	a = new char[len];
+	for (int i = 0; i < len; i++) a[i] = str.a[i];
+	a[len] = 0;
+}
 
 MyString::~MyString()
 {
@@ -48,7 +58,7 @@ ostream & operator<<(ostream & out, MyString & b)
 
 istream & operator>>(istream & in, MyString & b)
 {
-	char *tmp=new char [10001];
+	char *tmp=new char [100001];
 	in >> tmp;
 	int cnt = 0;
 	for (int i = 0; tmp[i] != 0; i++) cnt++;

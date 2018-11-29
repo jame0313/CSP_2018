@@ -8,6 +8,8 @@ private:
 	double* a;
 public:
 	MyVector(int _max_num);
+	MyVector(int _max_num, double *a);
+	MyVector(const MyVector& v);
 	~MyVector();
 	MyVector operator+(const MyVector& a);
 	MyVector operator-(const MyVector& a);

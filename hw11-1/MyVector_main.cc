@@ -19,33 +19,17 @@ int main() {
 			cout << "enter b" << endl;
 			cin >> *b;
 		}
-		else if (cmd == "a") {
+		else if (cmd == "a" || cmd == "b") {
 			string op, target;
 			cin >> op >> target;
-			if (target == "a") {
-				*a + *a;
-			}
-			else if (target == "b") {
-				*a + *b;
+			if (target == "a" || target == "b") {
+				MyVector tmp = op=="+" ? ((cmd=="a"?*a:*b) + (target == "a" ? *a : *b)) : ((cmd == "a" ? *a : *b) - (target == "a" ? *a : *b));
+				cout << tmp << endl;
 			}
 			else {
-				*a + stoi(target);
+				MyVector tmp = op == "+" ? ((cmd == "a" ? *a : *b) + stoi(target)) : ((cmd == "a" ? *a : *b) - stoi(target));
+				cout << tmp << endl;
 			}
-			cout << *a << endl;		
-		}
-		else if (cmd == "b") {
-			string op, target;
-			cin >> op >> target;
-			if (target == "a") {
-				*b + *a;
-			}
-			else if (target == "b") {
-				*b + *b;
-			}
-			else {
-				*b + stoi(target);
-			}
-			cout << *b << endl;
 		}
 	}
 }

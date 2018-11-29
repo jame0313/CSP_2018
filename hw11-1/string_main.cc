@@ -5,7 +5,6 @@ using namespace std;
 int main() {
 	string cmd;
 	MyString *a = NULL, *b = NULL;
-	char *k;
 	while (cin >> cmd, cmd != "quit") {
 		if (cmd == "new") {
 			if (a != NULL) delete a;
@@ -17,41 +16,11 @@ int main() {
 			cout << "enter b" << endl;
 			cin >> *b;
 		}
-		else if (cmd == "a") {
+		if (cmd == "a" || cmd == "b") {
 			string op, target;
 			cin >> op >> target;
-			if (op == "*") {
-				MyString tmp = ((*a)*stoi(target));
-				cout << tmp << endl;
-			}
-			else {
-				if (target == "a") { 
-					MyString tmp = *a + *a;
-					cout << tmp << endl;
-				}
-				else if (target == "b") {
-					MyString tmp = *a + *b;
-					cout << tmp << endl;
-				}
-			}
-		}
-		else if (cmd == "b") {
-			string op, target;
-			cin >> op >> target;
-			if (op == "*") {
-				MyString tmp = ((*b)*stoi(target));
-				cout << tmp << endl;
-			}
-			else {
-				if (target == "a") {
-					MyString tmp = *b + *a;
-					cout << tmp << endl;
-				}
-				else if (target == "b") {
-					MyString tmp = *b + *b;
-					cout << tmp << endl;
-				}
-			}
+			MyString tmp = op == "+" ? ((cmd == "a" ? *a : *b) + (target == "a" ? *a : *b)) : ((cmd == "a"? *a : *b) * stoi(target));
+			cout << tmp << endl;
 		}
 	}
 }

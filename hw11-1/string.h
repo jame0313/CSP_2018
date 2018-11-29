@@ -9,6 +9,7 @@ private:
 public:
 	MyString();
 	MyString(char* _a, int _len);
+	MyString(const MyString& str);
 	~MyString();
 	MyString operator+(const MyString& a);
 	MyString operator*(const int a);
