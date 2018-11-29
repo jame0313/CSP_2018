@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 2.8.12)
 project(hw11-1)
+set (CMAKE_CXX_STANDARD 14)
 set(FIRST MyVector)
 set(SECOND string)
 add_library(LIB_${FIRST} ${FIRST}.cc)
