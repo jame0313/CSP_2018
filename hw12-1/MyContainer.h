@@ -5,7 +5,7 @@ using namespace std;
 template<class T>
 class MyContainer {
 public:
-	MyContainer() :n_elements(0), obj_arr(NULL) {}
+	MyContainer() :n_elements(0), obj_arr(new T[0]) {}
 	MyContainer(int n) : n_elements(n) {
 		obj_arr = new T[n_elements];
 	}
@@ -48,7 +48,6 @@ public:
 			for (int i = 0; i < this->n_elements; i++) {
 				tmp[i] = (this->obj_arr)[i];
 			}
-			delete[] this->obj_arr;
 			this->obj_arr = tmp;
 			capacity = new_cap;
 		}
