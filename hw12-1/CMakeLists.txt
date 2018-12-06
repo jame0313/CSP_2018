@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8.12)
+project(hw12-1)
+set(FIRST Myswap)
+set(SECOND MyVector)
+add_executable(${FIRST} ${FIRST}_main.cc)
+add_executable(${SECOND} ${SECOND}_main.cc)
