@@ -5,11 +5,16 @@ using namespace std;
 template<class T>
 class MyContainer {
 public:
-	MyContainer() :n_elements(0), obj_arr(new T[0]) {}
+	MyContainer() :n_elements(0), obj_arr(NULL) {}
 	MyContainer(int n) : n_elements(n) {
 		obj_arr = new T[n_elements];
 	}
-	MyContainer(T* arr, int n) : n_elements(n), obj_arr(arr) {}
+	MyContainer(T* arr, int n) : n_elements(n) {
+        obj_arr = new T[n_elements];
+        for(int i=0;i<n_elements;i++){
+            obj_arr[i]=arr[i];
+        }
+    }
 	~MyContainer() {
 		if (n_elements != 0) delete[] obj_arr;
 	}
@@ -48,6 +53,7 @@ public:
 			for (int i = 0; i < this->n_elements; i++) {
 				tmp[i] = (this->obj_arr)[i];
 			}
+            if(this->n_elements>0) delete[] this->obj_arr;
 			this->obj_arr = tmp;
 			capacity = new_cap;
 		}
