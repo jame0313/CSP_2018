@@ -19,7 +19,6 @@ void Date::NextDay(int n)
 	_month[2] = this->GetDaysInYear(year_) == 366 ? 29 : 28;
 	month_ = 1;
 	days++;
-	cout << days << endl;
 	for (int i = 1; i <= 12; i++) {
 		if (days > _month[i]) {
 			days -= _month[i];

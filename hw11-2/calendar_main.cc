@@ -4,7 +4,7 @@ using namespace std;
 
 int main() {
 	string cmd;
-	Date c;
+	Date c(0,1,1);
 	while (cin >> cmd, cmd != "quit") {
 		if (cmd == "set") {
 			cin >> c;
