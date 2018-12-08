@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8.12)
+project(hw12-2)
+set(FIRST linked_list)
+set(SECOND my_shared_ptr)
+add_executable(${FIRST} ${FIRST}_main.cc)
+add_executable(${SECOND} ${SECOND}_main.cc)
