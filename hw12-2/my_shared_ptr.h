@@ -15,12 +15,14 @@ public:
 		increase();
 	}
 	~My_shared_ptr() {
-		decrease();
-		if (getCount() == 0) {
-			delete count;
-			delete m_obj;
-			cout << "everything destroyed";
-		}
+	    if(count != NULL ){
+		    decrease();
+		    if (getCount() == 0) {
+			    delete count;
+			    delete m_obj;
+			    cout << "everything destroyed";
+		    }
+	    }
 	}
 
 	My_shared_ptr<T>& operator=(const My_shared_ptr<T>& rhs)
