@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8.12)
+project(hw13-1)
+add_executable(exception_one exception_one.cc)
+add_executable(exception_two exception_two.cc)
+add_exectuable(exception_three exception_three.cc)
